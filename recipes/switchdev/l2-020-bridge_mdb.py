@@ -23,7 +23,7 @@ def do_task(ctl, hosts, ifaces, aliases):
 
     # Create a bridge
     sw_br = sw.create_bridge(slaves=[sw_if1, sw_if2, sw_if3, sw_if4],
-        options={"vlan_filtering": 1})
+            options={"vlan_filtering": 1, "multicast_querier": 1})
 
     m1_if.set_addresses(["192.168.101.10/24", "2002::1/64"])
     m2_if.set_addresses(["192.168.101.11/24", "2002::2/64"])
